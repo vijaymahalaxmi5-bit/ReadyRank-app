@@ -99,4 +99,4 @@ Watch the full working demo of ReadyRank:
 
 Try the deployed ReadyRank project here:
 
-[Open ReadyRank](https://interview-ready-ai--vijaymahalaxmi5.replit.app)
+[Open ReadyRank](https://ready-rank-app--vijaymahalaxmi5.replit.app)
