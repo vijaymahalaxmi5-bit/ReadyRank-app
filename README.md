@@ -87,14 +87,16 @@ project screenshots here:
 
 ![Landing Page](./Screenshot/Landing page.png)
 
-## Demo Video
+## 🎥 Demo & Live Project
 
-Watch the live working demo of ReadyRank here:
+### Demo Video
 
-[Click here to watch the demo](https://drive.google.com/file/d/1WnBMbQMwn_MGk2GT68fsq6l5KR0xa7un/view?usp=sharing)
+Watch the full working demo of ReadyRank:
 
-**## Live Demo**
+[Click here to watch the demo video](https://drive.google.com/file/d/1WnBMbQMwn_MGk2GT68fsq6l5KR0xa7un/view?usp=sharing)
 
-Try the live project here:
+### Live Demo
 
-[Open ReadyRank](https://interview-ready-ai--vijaymahalaxmi5.replit.app/)
+Try the deployed ReadyRank project here:
+
+[Open ReadyRank](https://interview-ready-ai--vijaymahalaxmi5.replit.app)
