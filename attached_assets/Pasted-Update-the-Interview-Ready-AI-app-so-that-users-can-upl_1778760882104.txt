@@ -1,0 +1,52 @@
+Update the “Interview Ready AI” app so that users can upload their resume instead of only pasting resume text.
+
+Replace the current resume text-only input with a resume upload section.
+
+Required changes:
+
+1. Resume Upload UI
+- Add a drag-and-drop upload box.
+- Add a “Choose File” button.
+- Accept these file types:
+  - PDF
+  - DOCX
+  - PNG
+  - JPG/JPEG
+- Show the uploaded file name after selection.
+- Show file type and file size.
+- Add a “Remove file” option.
+- Keep an optional “Paste resume text instead” fallback section below the upload box.
+
+2. File Processing
+- For PDF files, extract readable text from the PDF.
+- For DOCX files, extract readable text from the document.
+- For image files such as PNG/JPG, use OCR or simulate OCR with placeholder logic for MVP.
+- If text extraction fails, show a friendly error:
+  “We could not read this file. Please upload a clearer PDF/DOCX or paste your resume text.”
+
+3. Analysis Flow
+- When the user clicks “Analyze My Readiness,” the app should:
+  - First try to extract text from the uploaded file.
+  - If no file is uploaded, use pasted resume text.
+  - If both are empty, show an error asking the user to upload a resume or paste resume text.
+- Use the extracted resume text in the same scoring logic already built.
+
+4. User Experience
+- Add upload progress or loading state.
+- Show message: “Reading your resume…”
+- Then show: “Analyzing interview readiness…”
+- Keep the total candidate flow simple and under 2 minutes.
+
+5. Libraries
+Use suitable JavaScript libraries:
+- pdfjs-dist for PDF text extraction
+- mammoth for DOCX text extraction
+- tesseract.js for OCR from image files, or use mock OCR logic if OCR setup is too heavy for MVP
+
+6. Design
+- Make the upload box modern and clean.
+- Use an icon for upload.
+- Make it mobile responsive.
+- Match the existing blue, white, and purple theme.
+
+Do not remove the existing scoring dashboard. Only update the input step so the app supports resume file upload plus optional pasted text fallback.
