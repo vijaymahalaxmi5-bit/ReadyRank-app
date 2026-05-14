@@ -1,0 +1,138 @@
+Upgrade the “Interview Ready AI” app to use a free AI API for personalized resume analysis and report generation.
+
+Current app:
+- User uploads resume as PDF, DOCX, PNG, or JPG
+- App extracts resume text
+- App calculates an Interview Readiness Score using rule-based logic
+- App shows category-wise score dashboard
+
+Required upgrade:
+Add AI-powered feedback generation using the Gemini API.
+
+Important:
+Do not let the AI randomly generate the score.
+The score should still come from the app’s rule-based scoring logic.
+The AI should only generate personalized feedback, improvement suggestions, recruiter first impression, and 7-day preparation plan based on the extracted resume text and calculated scores.
+
+Use this flow:
+1. User uploads resume or pastes resume text.
+2. App extracts readable resume text.
+3. App calculates category scores:
+   - Resume Quality: 25 points
+   - Technical Skills Match: 25 points
+   - Project/Portfolio Strength: 20 points
+   - Communication & Presentation: 15 points
+   - Job Role Fit: 15 points
+4. App sends the resume text, target role, and calculated category scores to Gemini API.
+5. Gemini returns a structured JSON report.
+6. App displays the final report in the dashboard.
+
+Use Gemini API:
+- Use @google/generative-ai or the latest official Gemini JavaScript SDK
+- Store the API key in an environment variable:
+  VITE_GEMINI_API_KEY
+- Never hardcode the API key in the frontend code if possible.
+- If using a frontend-only MVP, clearly separate the API key config and include comments that production should use a backend proxy.
+
+Create an AI report generation function called generateAIReport.
+
+The AI prompt should ask Gemini to return only valid JSON in this format:
+
+{
+  "summary": "short overall summary",
+  "recruiterFirstImpression": "what a recruiter may think in 10 seconds",
+  "topStrengths": [
+    "specific strength 1",
+    "specific strength 2",
+    "specific strength 3"
+  ],
+  "topWeaknesses": [
+    "specific weakness 1",
+    "specific weakness 2",
+    "specific weakness 3"
+  ],
+  "priorityFixes": [
+    {
+      "priority": 1,
+      "title": "short fix title",
+      "reason": "why this matters",
+      "action": "specific action student should take"
+    }
+  ],
+  "sevenDayPlan": [
+    {
+      "day": 1,
+      "task": "specific preparation task"
+    },
+    {
+      "day": 2,
+      "task": "specific preparation task"
+    },
+    {
+      "day": 3,
+      "task": "specific preparation task"
+    },
+    {
+      "day": 4,
+      "task": "specific preparation task"
+    },
+    {
+      "day": 5,
+      "task": "specific preparation task"
+    },
+    {
+      "day": 6,
+      "task": "specific preparation task"
+    },
+    {
+      "day": 7,
+      "task": "specific preparation task"
+    }
+  ],
+  "suggestedInterviewQuestions": [
+    "question 1",
+    "question 2",
+    "question 3",
+    "question 4",
+    "question 5"
+  ],
+  "resumeRewriteSuggestions": [
+    {
+      "before": "weak or generic resume phrase if found",
+      "after": "stronger improved version"
+    }
+  ]
+}
+
+AI prompt rules:
+- Keep feedback specific to the target role.
+- Do not be generic.
+- Do not invent experience, projects, companies, certifications, or achievements that are not present in the resume.
+- If information is missing, say it is missing.
+- Keep suggestions beginner-friendly for students.
+- Make the feedback actionable.
+- Do not include markdown in the JSON.
+- Return only valid JSON.
+
+Add fallback behavior:
+If the Gemini API fails, show the existing rule-based report instead and display:
+“AI feedback is temporarily unavailable, but your rule-based readiness report is ready.”
+
+Add loading states:
+- “Reading resume…”
+- “Calculating readiness score…”
+- “Generating AI feedback…”
+- “Preparing report…”
+
+Update UI:
+- Add an “AI-Powered Report” badge.
+- Add a “Recruiter First Impression” card.
+- Add a “Priority Fixes” section.
+- Add a “7-Day Improvement Plan” section.
+- Add “Suggested Interview Questions” based on weak areas.
+- Keep the existing score dashboard and progress bars.
+
+Make sure the same category never appears in both strengths and weaknesses.
+Strengths should come from high-scoring categories.
+Weaknesses should come from low-scoring categories.
+AI feedback should respect the calculated category scores.
