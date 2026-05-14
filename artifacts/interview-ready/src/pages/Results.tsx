@@ -49,11 +49,11 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
           <div className="flex items-center gap-3">
             {aiReport && (
               <span
-                data-testid="badge-ai-powered"
+                data-testid="badge-readyrank"
                 className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-purple-500/10 text-primary border border-primary/20"
               >
                 <Sparkles className="w-3.5 h-3.5" />
-                AI-Powered Report
+                2-Minute Readiness Report
               </span>
             )}
             <Button
@@ -74,7 +74,7 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
           >
             <AlertTriangle className="w-4 h-4 mt-0.5 flex-shrink-0" />
             <span>
-              AI feedback is temporarily unavailable, but your rule-based readiness report is ready.
+              Personalized feedback is temporarily unavailable, but your readiness score and basic improvement report are ready.
             </span>
           </div>
         )}
@@ -88,7 +88,7 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
               </div>
               <div className="p-8 col-span-2 flex flex-col justify-center">
                 <h1 className="text-3xl font-bold text-slate-900 mb-2" data-testid="text-report-title">
-                  {input.name}'s Readiness Report
+                  {input.name}'s Interview Readiness Report
                 </h1>
                 <p className="text-lg text-slate-600 mb-6 flex items-center gap-2">
                   Target Role:{" "}
@@ -109,13 +109,13 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
           </CardContent>
         </Card>
 
-        {/* AI Summary + Recruiter First Impression */}
+        {/* Summary + Recruiter First Impression */}
         {aiReport && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="bg-gradient-to-br from-primary/5 to-purple-500/5 border-primary/10">
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center gap-2 text-primary text-base">
-                  <Sparkles className="w-4 h-4" /> AI Summary
+                  <Sparkles className="w-4 h-4" /> Readiness Summary
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -128,7 +128,7 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
             <Card className="bg-gradient-to-br from-indigo-50 to-blue-50 border-indigo-100">
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center gap-2 text-indigo-700 text-base">
-                  <Eye className="w-4 h-4" /> Recruiter First Impression
+                  <Eye className="w-4 h-4" /> Recruiter's First Impression
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -193,7 +193,7 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
               <CardTitle className="flex items-center text-slate-800">
                 <Zap className="mr-2 h-5 w-5 text-orange-500" /> Priority Fixes
               </CardTitle>
-              <CardDescription>Address these in order for the fastest improvement.</CardDescription>
+              <CardDescription>Address these in order to improve your score the fastest.</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -281,11 +281,11 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
         <Card className="bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-100">
           <CardHeader>
             <CardTitle className="flex items-center text-indigo-900">
-              <Calendar className="mr-2 h-5 w-5 text-indigo-600" /> 7-Day Improvement Plan
+              <Calendar className="mr-2 h-5 w-5 text-indigo-600" /> 7-Day Interview Prep Plan
             </CardTitle>
             {aiReport && (
               <CardDescription className="flex items-center gap-1 text-indigo-600">
-                <Sparkles className="w-3 h-3" /> Personalized by AI
+                <Sparkles className="w-3 h-3" /> Personalized to your profile
               </CardDescription>
             )}
           </CardHeader>
@@ -311,9 +311,9 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
         <Card className="bg-white border-slate-200 shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center text-slate-800">
-              <MessageSquare className="mr-2 h-5 w-5 text-blue-500" /> Tailored Interview Questions
+              <MessageSquare className="mr-2 h-5 w-5 text-blue-500" /> Practice Questions
             </CardTitle>
-            <CardDescription>Practice these questions as they relate to your weak areas.</CardDescription>
+            <CardDescription>Practice these questions to strengthen your weak areas before the interview.</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
@@ -329,6 +329,11 @@ export default function Results({ input, result, aiReport, aiUnavailable, onRese
             </div>
           </CardContent>
         </Card>
+
+        {/* Footer */}
+        <p className="text-center text-xs text-slate-400 pb-4 no-print">
+          Designed to help students prepare before facing real recruiters.
+        </p>
 
       </div>
     </div>

@@ -138,16 +138,22 @@ export default function Home({ onAnalyze }: HomeProps) {
     <div className="min-h-[100dvh] w-full bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4 sm:p-8">
       <Card className="w-full max-w-3xl shadow-xl border-white/50 backdrop-blur-sm bg-white/90">
         <CardHeader className="text-center space-y-2">
-          <div className="mx-auto w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
-            <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+          <div className="mx-auto mb-4 text-center">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span className="text-xl font-bold text-slate-900 tracking-tight">ReadyRank</span>
+            </div>
+            <p className="text-xs font-medium text-primary/70 uppercase tracking-widest">Know before you interview.</p>
           </div>
           <CardTitle className="text-3xl font-bold tracking-tight text-slate-900">
             Check Your Interview Readiness in 2 Minutes
           </CardTitle>
           <CardDescription className="text-base text-slate-600">
-            Get instant, actionable feedback on your resume and profile tailored to your dream role.
+            Upload your resume and get a clear readiness score, recruiter-style feedback, and a personalized improvement plan before your real interview.
           </CardDescription>
         </CardHeader>
 
@@ -395,24 +401,29 @@ export default function Home({ onAnalyze }: HomeProps) {
               </div>
             )}
 
-            <Button
-              type="submit"
-              className="w-full h-14 text-lg bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg transition-all"
-              disabled={isAnalyzing || !formData.name || !formData.targetRole || !hasResume}
-              data-testid="button-analyze"
-            >
-              {isAnalyzing ? (
-                <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  {loadingText}
-                </>
-              ) : (
-                <>
-                  Analyze My Readiness
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </>
-              )}
-            </Button>
+            <div className="space-y-3">
+              <Button
+                type="submit"
+                className="w-full h-14 text-lg bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg transition-all"
+                disabled={isAnalyzing || !formData.name || !formData.targetRole || !hasResume}
+                data-testid="button-analyze"
+              >
+                {isAnalyzing ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    {loadingText}
+                  </>
+                ) : (
+                  <>
+                    Analyze My Readiness
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </>
+                )}
+              </Button>
+              <p className="text-center text-xs text-slate-400">
+                No login required. Resume reviewed instantly.
+              </p>
+            </div>
           </form>
         </CardContent>
       </Card>

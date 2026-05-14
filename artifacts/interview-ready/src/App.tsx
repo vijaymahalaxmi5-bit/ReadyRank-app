@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 
 const LOADING_STEPS = [
   "Calculating readiness score...",
-  "Generating AI feedback...",
+  "Preparing personalized feedback...",
   "Preparing your report...",
 ];
 
