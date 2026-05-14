@@ -93,7 +93,7 @@ project screenshots here:
 
 Watch the full working demo of ReadyRank:
 
-[Click here to watch the demo video](https://drive.google.com/file/d/1WnBMbQMwn_MGk2GT68fsq6l5KR0xa7un/view?usp=sharing)
+[Click here to watch the demo video](https://drive.google.com/file/d/1-hP_61Pa2w4PdnbR9CZC1nsyhgmK2Kj5/view?usp=sharing)
 
 ### Live Demo
 
