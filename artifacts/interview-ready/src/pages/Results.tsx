@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CircularScore } from "@/components/CircularScore";
 import { CategoryBar } from "@/components/CategoryBar";
-import { CheckCircle2, AlertTriangle, ArrowLeft, Download, Lightbulb, Calendar, MessageSquare } from "lucide-react";
+import { CheckCircle2, AlertTriangle, ArrowLeft, ArrowRight, Download, Lightbulb, Calendar, MessageSquare } from "lucide-react";
 
 interface ResultsProps {
   input: ProfileInput;
