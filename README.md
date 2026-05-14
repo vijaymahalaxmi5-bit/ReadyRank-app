@@ -83,9 +83,9 @@ This approach helps avoid random scoring while still giving each student a usefu
 
 ## Screenshots
 
-Add your project screenshots here:
-```markdown
-![Results Dashboard](./screenshots/results-dashboard.png)
+project screenshots here:
+
+![Landing Page](./Screenshot/Landing page.png)
 
 **## Live Demo**
 
