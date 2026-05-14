@@ -86,3 +86,9 @@ This approach helps avoid random scoring while still giving each student a usefu
 Add your project screenshots here:
 ```markdown
 ![Results Dashboard](./screenshots/results-dashboard.png)
+
+**## Live Demo**
+
+Try the live project here:
+
+[Open ReadyRank](https://drive.google.com/file/d/1WnBMbQMwn_MGk2GT68fsq6l5KR0xa7un/view?usp=sharing)
